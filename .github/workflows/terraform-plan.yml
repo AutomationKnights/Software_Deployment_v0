@@ -33,6 +33,7 @@ jobs:
 
       - name: Terraform Validate
         env:
+          # Placeholder GUIDs satisfy required variables during auth-free validation.
           TF_VAR_subscription_id: "00000000-0000-0000-0000-000000000000"
           TF_VAR_tenant_id: "00000000-0000-0000-0000-000000000000"
         run: terraform validate
