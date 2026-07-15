@@ -30,7 +30,7 @@ jobs:
           terraform_version: 1.10.5
 
       - name: Terraform Init
-        run: terraform init -input=false
+        run: terraform init -backend-config="region=eu-north-1" -input=false
 
       - name: Terraform Destroy
         run: terraform destroy -input=false -auto-approve -var-file=terraform.tfvars
