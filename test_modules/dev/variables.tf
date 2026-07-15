@@ -3,22 +3,17 @@ variable "project_prefix" {
   default = "test"
 }
 
-variable "resource_group" {
+variable "aws_region" {
   type    = string
-  default = "rg-terraform"
+  default = "ap-south-1"
 }
 
-variable "location" {
-  type    = string
-  default = "centralindia"
-}
-
-variable "vnet_cidr" {
+variable "vpc_cidr" {
   type    = string
   default = "10.10.0.0/16"
 }
 
-variable "aks_subnet_cidr" {
+variable "eks_subnet_cidr" {
   type    = string
   default = "10.10.1.0/24"
 }
@@ -28,21 +23,26 @@ variable "tags" {
   default = {
     env = "test"
   }
-
-}
-variable "dns_service_ip" {
-  type = string
-}
-variable "service_cidr" {
-  type = string
 }
 
-variable "subscription_id" {
-  type        = string
-  description = "Azure subscription ID used by the provider and supplied through Azure DevOps."
+variable "grafana_admin_password" {
+  type      = string
+  sensitive = true
+  default   = "Admin@12345"
 }
 
-variable "tenant_id" {
-  type        = string
-  description = "Azure tenant ID used by the provider and supplied through Azure DevOps."
+variable "docdb_database_name" {
+  type    = string
+  default = "appdb"
+}
+
+variable "docdb_master_username" {
+  type    = string
+  default = "dbadmin"
+}
+
+variable "docdb_master_password" {
+  type      = string
+  sensitive = true
+  default   = "ChangeMe123!"
 }

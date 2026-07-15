@@ -1,2 +1,2 @@
-output "vnet_id" { value = azurerm_virtual_network.vnet.id }
-output "aks_subnet_id" { value = azurerm_subnet.aks.id }
+output "vpc_id" { value = aws_vpc.this.id }
+output "eks_subnet_ids" { value = aws_subnet.eks[*].id }
