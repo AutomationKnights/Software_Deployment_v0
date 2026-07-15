@@ -22,7 +22,7 @@ module "eks" {
   location                  = var.region
   kubernetes_version        = "1.31"
   agent_count               = 2
-  agent_vm_size             = "t3.medium"
+  agent_vm_size             = "t2.micro"
   acr_id                    = module.ecr.registry_id
   enable_container_insights = true
   tags                      = var.tags

@@ -10,7 +10,7 @@ variable "agent_count" {
 }
 variable "agent_vm_size" {
   type    = string
-  default = "t3.medium"
+  default = "t2.micro"
 }
 variable "subnet_ids" { type = list(string) }
 variable "acr_id" {
