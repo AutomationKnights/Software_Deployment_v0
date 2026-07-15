@@ -30,7 +30,7 @@ jobs:
           terraform_version: 1.10.5
 
       - name: Terraform Init
-        run: terraform init -backend-config="region=eu-north-1" -input=false
+        run: terraform init -input=false
 
       - name: Terraform Plan
         run: terraform plan -input=false -no-color -var-file=terraform.tfvars -out=tfplan
@@ -78,7 +78,7 @@ jobs:
           terraform_version: 1.10.5
 
       - name: Terraform Init
-        run: terraform init -backend-config="region=eu-north-1" -input=false
+        run: terraform init -input=false
 
       - name: Terraform Apply
         run: terraform apply -input=false -auto-approve tfplan
