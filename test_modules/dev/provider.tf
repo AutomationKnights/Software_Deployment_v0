@@ -8,9 +8,9 @@ terraform {
   required_version = ">= 1.0.0"
   
   backend "s3" {
-    bucket         = "terraform-backendv01"
+    bucket         = "terraform-backend-638111422513-ap-south-1-an"
     key            = "dev/terraform.tfstate"
-    region         = "eu-north-1"
+    region         = "ap-south-1"
     dynamodb_table = "tfstate" # Used for state locking
     encrypt        = true
   }
