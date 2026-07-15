@@ -1,10 +1,7 @@
 terraform {
   required_providers {
-    azurerm = {
-      source = "hashicorp/azurerm"
-    }
-    azapi = {
-      source = "azure/azapi"
+    aws = {
+      source = "hashicorp/aws"
     }
     kubernetes = {
       source = "hashicorp/kubernetes"

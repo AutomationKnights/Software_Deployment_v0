@@ -1,8 +1,6 @@
-project_prefix  = "sd1"
-resource_group  = "rg-sd1"
-location        = "centralindia"
-vnet_cidr       = "10.0.0.0/16"
-aks_subnet_cidr = "10.0.0.0/24"
+project_prefix = "sd1"
+region         = "ap-south-1"
+vnet_cidr      = "10.0.0.0/16"
 tags = {
   "env"   = "test"
   "owner" = "mdakbar"
