@@ -1,27 +1,23 @@
 terraform {
   required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 5.0"
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "~> 3.0"
     }
   }
   required_version = ">= 1.0.0"
-
-  # Local backend for development. For production, use S3 with DynamoDB locking:
-  #
-  # backend "s3" {
-  #   bucket         = "<your-state-bucket>"
-  #   key            = "dev/terraform.tfstate"
-  #   region         = "ap-south-1"
-  #   dynamodb_table = "<your-lock-table>"
-  #   encrypt        = true
-  # }
-
-  backend "local" {
-    path = "terraform.tfstate"
+  backend "azurerm" {
+    resource_group_name  = "terraform-backend"
+    storage_account_name = "terraformbackendstorage"
+    container_name       = "tfstate"
+    key                  = "terraform.tfstate"
   }
 }
+provider "azurerm" {
+  features {}
+  # client_id       = "<client_id>"
+  # client_secret   = " <client_secret>"
+  tenant_id       = var.tenant_id
+  subscription_id = var.subscription_id
 
-provider "aws" {
-  region = var.aws_region
 }

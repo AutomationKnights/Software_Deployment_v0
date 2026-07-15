@@ -1,22 +1,21 @@
 variable "project_prefix" {
   type = string
 }
-
+variable "resource_group" {
+  type = string
+}
+variable "location" {
+  type = string
+}
 variable "name" {
   type    = string
   default = null
 }
-
-variable "image_tag_mutability" {
+variable "sku" {
   type    = string
-  default = "MUTABLE"
+  default = "Basic"
 }
-
-variable "scan_on_push" {
-  type    = bool
-  default = true
-}
-
 variable "tags" {
   type = map(string)
+
 }
