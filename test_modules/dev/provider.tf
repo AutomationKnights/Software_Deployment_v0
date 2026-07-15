@@ -6,14 +6,12 @@ terraform {
     }
   }
   required_version = ">= 1.0.0"
-  # backend "azurerm" {
-  #   resource_group_name  = "terraform-backend"
-  #   storage_account_name = "terraformbackendstorage"
-  #   container_name       = "tfstate"
-  #   key                  = "terraform.tfstate"
-  # }
-}
-
-provider "aws" {
-  region = var.region
+  
+  backend "s3" {
+    bucket         = "terraform-backendv01"
+    key            = "dev/terraform.tfstate"
+    region         = "ap-south-1"
+    dynamodb_table = "tfstate" # Used for state locking
+    encrypt        = true
+  }
 }
